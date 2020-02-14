@@ -8,16 +8,19 @@ const SUPPORTED_CURRENCIES = {
   PLN: 'PLN'
 }
 
-const CurrencyToggler = () => {
+const CurrencyToggler = ({onChange}) => {
   return (
     <div>
       { Object.keys(SUPPORTED_CURRENCIES).map(key => {
         return (
           <Form.Check
+            inline
             type="radio"
             label={key}
             id={key}
             key={key}
+            name="currency"
+            onChange={onChange}
           />
         )
       }) }
